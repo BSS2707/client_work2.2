@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-brand">
             <Link to="/" className="logo">
-              <img src="/logo.png" alt="GrowVora Logo" />
+              <img src="https://cdn.corenexis.com/f/pzO06agieXb.png" alt="GrowVora Logo" />
             </Link>
             <p>We create result-driven digital solutions to help your business stand out and succeed online.</p>
             <div className="social-links">

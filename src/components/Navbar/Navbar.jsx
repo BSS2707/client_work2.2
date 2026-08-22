@@ -62,7 +62,7 @@ const Navbar = () => {
       <header className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="nav-container">
           <Link to="/" className="logo">
-            <img src="/logo.png" alt="GrowVora Logo" />
+            <img src="https://cdn.corenexis.com/f/pzO06agieXb.png" alt="GrowVora Logo" />
           </Link>
 
           <nav className="nav-links">

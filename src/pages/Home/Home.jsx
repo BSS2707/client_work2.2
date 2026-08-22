@@ -80,7 +80,7 @@ const Home = () => {
               transition={{ duration: 0.8 }}
             >
               <div className="center-logo-circle">
-                <img src="/logo.png" alt="GrowVora Logo" style={{ width: '75%', height: 'auto', objectFit: 'contain' }} />
+                <img src="https://cdn.corenexis.com/f/pzO06agieXb.png" alt="GrowVora Logo" style={{ width: '75%', height: 'auto', objectFit: 'contain' }} />
               </div>
               
               {/* Floating elements would be absolutely positioned here */}
