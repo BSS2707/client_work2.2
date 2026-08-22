@@ -1,0 +1,30 @@
+@import '../../styles/base/variables';
+
+.video-modal-content {
+  width: 100%;
+  max-width: 900px;
+  aspect-ratio: 16/9;
+  background: #000;
+  border-radius: $border-radius-md;
+  position: relative;
+  box-shadow: $shadow-lg;
+  
+  .video-container {
+    width: 100%;
+    height: 100%;
+    border-radius: $border-radius-md;
+    overflow: hidden;
+  }
+  
+  .video-close {
+    top: -50px;
+    right: 0;
+    color: $white;
+    background: rgba(255, 255, 255, 0.2);
+    
+    &:hover {
+      background: $white;
+      color: $text-primary;
+    }
+  }
+}

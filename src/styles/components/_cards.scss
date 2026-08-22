@@ -1,0 +1,18 @@
+.card {
+  background: $white;
+  border-radius: $border-radius-md;
+  border: 1px solid $border-light;
+  padding: 32px;
+  transition: $transition-base;
+  
+  &:hover {
+    box-shadow: $shadow-md;
+    transform: translateY(-5px);
+  }
+}
+
+.glass-card {
+  @include glassmorphism;
+  border-radius: $border-radius-md;
+  padding: 24px;
+}

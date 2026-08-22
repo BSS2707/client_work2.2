@@ -1,0 +1,45 @@
+.form-group {
+  margin-bottom: 24px;
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: $text-primary;
+    font-size: 15px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid $border-light;
+    background: $white;
+    font-family: inherit;
+    font-size: 16px;
+    color: $text-primary;
+    transition: $transition-base;
+    
+    &:focus {
+      outline: none;
+      border-color: $primary-blue;
+      box-shadow: 0 0 0 4px rgba(23, 105, 255, 0.1);
+    }
+    
+    &::placeholder {
+      color: #9CA3AF;
+    }
+  }
+  
+  textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+  }
+  
+  .error-message {
+    color: $error;
+    font-size: 13px;
+    margin-top: 6px;
+    display: block;
+  }
+}

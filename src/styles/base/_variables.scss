@@ -1,0 +1,38 @@
+$primary-green: #32A852;
+$primary-green-dark: #218838;
+
+$primary-blue: #1769FF;
+$primary-blue-dark: #0B4FD8;
+
+$accent-purple: #6C3BFF;
+$accent-pink: #FF2D78;
+$accent-orange: #FF8A00;
+
+$dark-navy: #07144A;
+$text-primary: #0B1746;
+$text-secondary: #4F5B7A;
+
+$white: #FFFFFF;
+$background: #F8FAFF;
+
+$border-light: #E8ECF5;
+
+$success: #32A852;
+$error: #E53935;
+$warning: #FF9800;
+
+$primary-gradient: linear-gradient(135deg, $primary-green 0%, $primary-blue 100%);
+$logo-gradient: linear-gradient(135deg, $primary-green, $primary-blue, $accent-purple);
+
+$shadow-sm: 0 4px 12px rgba(11, 23, 70, 0.05);
+$shadow-md: 0 8px 24px rgba(11, 23, 70, 0.08);
+$shadow-lg: 0 16px 48px rgba(11, 23, 70, 0.12);
+
+$border-radius-sm: 8px;
+$border-radius-md: 18px;
+$border-radius-lg: 28px;
+$border-radius-pill: 50px;
+
+$font-primary: 'Inter', sans-serif;
+$transition-base: all 0.3s ease;
+$transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);

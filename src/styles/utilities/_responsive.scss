@@ -1,0 +1,18 @@
+// Global responsive utilities if needed
+.hide-mobile {
+  @include responsive(mobile) {
+    display: none !important;
+  }
+}
+
+.hide-desktop {
+  @include responsive(desktop) {
+    display: none !important;
+  }
+}
+
+.text-center-mobile {
+  @include responsive(mobile) {
+    text-align: center !important;
+  }
+}

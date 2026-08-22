@@ -1,0 +1,82 @@
+@import '../../styles/base/variables';
+@import '../../styles/base/mixins';
+
+.pt-20 { padding-top: 80px; }
+.pb-20 { padding-bottom: 80px; }
+.text-center { text-align: center; }
+.py-10 { padding-top: 40px; padding-bottom: 40px; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.mb-4 { margin-bottom: 16px; }
+.mb-2 { margin-bottom: 8px; }
+.mt-6 { margin-top: 24px; }
+.text-secondary { color: $text-secondary; }
+.w-full { width: 100%; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 60px;
+  
+  @include responsive(tablet) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  @include responsive(mobile) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.info-cards {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.info-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  
+  .icon {
+    font-size: 24px;
+    color: $primary-green;
+    width: 56px;
+    height: 56px;
+    background: rgba(50, 168, 82, 0.1);
+    border-radius: 12px;
+    padding: 16px;
+  }
+  
+  h4 {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  
+  p {
+    font-size: 15px;
+    color: $text-secondary;
+    margin: 0;
+  }
+}
+
+.contact-form-container {
+  padding: 40px;
+  
+  @include responsive(mobile) {
+    padding: 24px;
+  }
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  
+  @include responsive(mobile) {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}

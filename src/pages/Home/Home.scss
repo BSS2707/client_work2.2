@@ -1,0 +1,279 @@
+@import '../../styles/base/variables';
+@import '../../styles/base/mixins';
+
+.hero-section {
+  padding: 60px 0 100px;
+  overflow: hidden;
+  
+  .container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    
+    @include responsive(tablet) {
+      flex-direction: column;
+      text-align: center;
+      gap: 40px;
+    }
+    
+    @include responsive(mobile) {
+      flex-direction: column;
+      text-align: center;
+      padding-top: 40px;
+      gap: 40px;
+    }
+  }
+  
+  .hero-content {
+    flex: 1;
+    
+    .badge {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: $text-secondary;
+      margin-bottom: 24px;
+      position: relative;
+      padding-left: 20px;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 8px;
+        height: 8px;
+        background: $primary-green;
+        border-radius: 50%;
+      }
+    }
+    
+    h1 {
+      margin-bottom: 24px;
+    }
+    
+    p {
+      color: $text-secondary;
+      font-size: 18px;
+      margin-bottom: 40px;
+      max-width: 500px;
+      
+      @include responsive(tablet) {
+        margin: 0 auto 40px;
+      }
+    }
+    
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      
+      @include responsive(tablet) {
+        justify-content: center;
+      }
+      
+      @include responsive(mobile) {
+        flex-direction: column;
+        width: 100%;
+        
+        .btn {
+          width: 100%;
+        }
+      }
+    }
+  }
+  
+  .hero-visual {
+    flex: 1;
+    position: relative;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    @include responsive(mobile) {
+      height: 400px;
+      width: 100%;
+    }
+    
+    .visual-composition {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      border: 1px dashed $border-light;
+      @include flex-center;
+      
+      @include responsive(mobile) {
+        width: 300px;
+        height: 300px;
+      }
+    }
+    
+    .center-logo-circle {
+      width: 200px;
+      height: 200px;
+      background: $white;
+      border-radius: 50%;
+      box-shadow: $shadow-lg;
+      @include flex-center;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 10;
+      
+      .fw-800 { font-weight: 800; font-size: 24px; }
+      p { font-size: 10px; letter-spacing: 1px; color: $text-secondary; }
+    }
+    
+    .floating-icon {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background: $white;
+      border-radius: 16px;
+      box-shadow: $shadow-md;
+      @include flex-center;
+      font-size: 24px;
+      
+      &.icon-1 { top: 0; left: 20px; }
+      &.icon-2 { top: 40px; right: 0; }
+      &.icon-3 { bottom: 40px; left: 0; }
+      &.icon-4 { bottom: 0; right: 40px; }
+    }
+  }
+}
+
+.stats-section {
+  padding: 40px 0;
+  margin-top: -60px;
+  position: relative;
+  z-index: 20;
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    
+    @include responsive(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include responsive(mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.services-section, .featured-projects, .team-section {
+  padding: 100px 0;
+  
+  @include responsive(mobile) {
+    padding: 60px 0;
+  }
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  
+  @include responsive(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @include responsive(mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.why-choose-us {
+  background: $white;
+  padding: 100px 0;
+  border-top: 1px solid $border-light;
+  border-bottom: 1px solid $border-light;
+  
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    
+    @include responsive(tablet) {
+      grid-template-columns: 1fr;
+    }
+    
+    @include responsive(mobile) {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+  
+  .benefits-list {
+    margin: 30px 0;
+    
+    li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      font-size: 16px;
+      color: $text-secondary;
+      
+      svg {
+        font-size: 20px;
+      }
+    }
+  }
+  
+  .rounded-lg { border-radius: $border-radius-lg; }
+  .shadow-lg { box-shadow: $shadow-lg; }
+  .mt-4 { margin-top: 24px; }
+  .ml-2 { margin-left: 8px; }
+  .text-green { color: $primary-green; }
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 48px;
+  
+  .section-title {
+    margin-bottom: 0 !important;
+  }
+  
+  @include responsive(mobile) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  
+  @include responsive(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @include responsive(mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  
+  @include responsive(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @include responsive(mobile) {
+    grid-template-columns: 1fr;
+  }
+}

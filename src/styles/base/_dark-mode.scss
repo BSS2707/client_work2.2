@@ -1,0 +1,130 @@
+@import './variables';
+
+// Dark Mode Overrides
+body.dark-mode {
+  background-color: #050B20;
+  color: #A0ABC0;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #FFFFFF;
+  }
+  
+  p, li {
+    color: #A0ABC0;
+  }
+
+  // Component Overrides
+  .navbar {
+    background: rgba(5, 11, 32, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    
+    .nav-links a {
+      color: #A0ABC0;
+      &:hover, &.active { color: $primary-green; }
+    }
+  }
+
+  .mobile-menu {
+    background: #0B1746;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    
+    .close-btn { color: #FFFFFF; }
+    .mobile-links a { color: #FFFFFF; }
+  }
+
+  .card, .glass-card, .results-box, .chart-container {
+    background: #0B1746;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    h3 { color: #FFFFFF; }
+    p { color: #A0ABC0; }
+  }
+
+  .footer {
+    background: #050B20;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    
+    p { color: #A0ABC0; }
+    .footer-brand .logo { color: #FFFFFF; }
+    .social-links a { 
+      background: #0B1746; 
+      color: #FFFFFF;
+      &:hover { background: $primary-green; }
+    }
+  }
+
+  .why-choose-us, .no-results {
+    background: #050B20;
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .modal-content {
+    background: #0B1746;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    .modal-header { border-bottom-color: rgba(255, 255, 255, 0.1); }
+    .close-btn { 
+      background: #050B20; 
+      color: #FFFFFF; 
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  .form-control, .search-input {
+    background: #050B20;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #FFFFFF;
+    
+    &:focus {
+      border-color: $primary-blue;
+    }
+  }
+
+  .filter-btn {
+    background: #0B1746;
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #A0ABC0;
+    
+    &:hover { border-color: $primary-green; color: $primary-green; }
+    &.active { background: $primary-green; color: #FFFFFF; border-color: $primary-green; }
+  }
+}
+
+// Theme Toggle Button Styles
+.theme-toggle-btn {
+  background: transparent;
+  border: 1px solid rgba(11, 23, 70, 0.1);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: $text-primary;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  
+  body.dark-mode & {
+    color: #FFFFFF;
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  &:hover {
+    background: rgba(11, 23, 70, 0.05);
+    
+    body.dark-mode & {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+}
+
+.mobile-actions {
+  display: none;
+  align-items: center;
+  gap: 16px;
+  
+  @media (max-width: 1023px) {
+    display: flex;
+  }
+}

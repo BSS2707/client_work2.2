@@ -1,0 +1,57 @@
+h1, h2, h3, h4, h5, h6 {
+  color: $text-primary;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 32px;
+  
+  @media (min-width: 768px) {
+    font-size: 44px;
+  }
+  
+  @media (min-width: 1024px) {
+    font-size: 64px;
+    line-height: 1.1;
+  }
+}
+
+h2 {
+  font-size: 26px;
+  
+  @media (min-width: 768px) {
+    font-size: 36px;
+  }
+  
+  @media (min-width: 1024px) {
+    font-size: 48px;
+  }
+}
+
+h3 {
+  font-size: 20px;
+  
+  @media (min-width: 768px) {
+    font-size: 24px;
+  }
+}
+
+p {
+  font-size: 15px;
+  
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
+  
+  @media (min-width: 1024px) {
+    font-size: 18px;
+  }
+}
+
+.text-gradient {
+  background: $logo-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
