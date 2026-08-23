@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FiMoon, FiSun } from 'react-icons/fi';
 import { addProject, getProjects } from '../../data/projects';
 import './Dashboard.scss';
 
@@ -12,8 +13,17 @@ const emptyForm = {
 };
 
 const Dashboard = () => {
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    return localStorage.getItem('dashboard-theme') === 'dark';
+  });
   const [projects, setProjects] = useState(() => getProjects());
   const [form, setForm] = useState(emptyForm);
+
+  const toggleTheme = () => {
+    const newTheme = !isDarkMode;
+    setIsDarkMode(newTheme);
+    localStorage.setItem('dashboard-theme', newTheme ? 'dark' : 'light');
+  };
 
   const spotlightProjects = [
     projects.find((project) => project.id === 'zorko'),
@@ -79,14 +89,19 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="dashboard-page pt-20">
+    <div className={`dashboard-page pt-20 ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
       <div className="container">
         <div className="dashboard-header">
           <div>
             <p className="eyebrow">Client dashboard</p>
             <h1>Performance overview</h1>
           </div>
-          <Link to="/projects" className="btn btn-primary">View all projects</Link>
+          <div className="dashboard-actions">
+            <button className="theme-toggle-btn" onClick={toggleTheme} aria-label="Toggle theme">
+              {isDarkMode ? <FiSun /> : <FiMoon />}
+            </button>
+            <Link to="/projects" className="btn btn-primary">View all projects</Link>
+          </div>
         </div>
 
         <section className="stats-grid">
