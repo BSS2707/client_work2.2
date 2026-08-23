@@ -5,6 +5,7 @@ import Footer from './components/Footer/Footer';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 import Home from './pages/Home/Home';
+import Dashboard from './pages/Dashboard/Dashboard';
 import InstagramManagement from './pages/InstagramManagement/InstagramManagement';
 import WebDevelopment from './pages/WebDevelopment/WebDevelopment';
 import GraphicDesigning from './pages/GraphicDesigning/GraphicDesigning';
@@ -24,6 +25,7 @@ function App() {
         <main className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/instagram-management" element={<InstagramManagement />} />
             <Route path="/web-development" element={<WebDevelopment />} />
             <Route path="/graphic-designing" element={<GraphicDesigning />} />

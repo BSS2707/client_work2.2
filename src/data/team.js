@@ -43,7 +43,7 @@ export const team = [
   {
     id: "bhavya-solanki",
     name: "Bhavya Solanki",
-    role: "Web Developer",
+    role: "Web/AI Developer",
     image: "https://avatars.githubusercontent.com/u/154740336?v=4",
     linkedin: "#",
     instagram: "https://www.instagram.com/bhavyasolanki_07/",

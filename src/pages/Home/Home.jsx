@@ -19,7 +19,10 @@ const Home = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
 
-  const featuredProjects = projects.slice(0, 3);
+  const featuredProjects = [
+    projects.find((project) => project.id === 'zorko'),
+    ...projects.filter((project) => project.id !== 'zorko').slice(0, 2)
+  ].filter(Boolean);
   const topTeam = team.slice(0, 4);
 
   return (

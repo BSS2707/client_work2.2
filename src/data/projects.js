@@ -121,27 +121,27 @@ export const projects = [
     ]
   },
   {
-    id: "vertex-architecture",
-    title: "Vertex Architecture",
-    category: "Real Estate",
-    service: "Branding",
-    handle: "@vertex.arch",
-    followers: "-",
-    reach: "-",
-    engagement: "-",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop",
-    description: "Developed a minimalist, brutalist-inspired brand identity that reflects the firm's focus on modern, sustainable commercial buildings.",
+    id: "zorko",
+    title: "Zorko",
+    category: "Technology",
+    service: "Web Development",
+    handle: "zorko.in",
+    followers: "18.6K",
+    reach: "2.4M",
+    engagement: "7.9%",
+    image: "https://zorko.in/wp-content/uploads/2026/02/zorko-new-logo-1.webp",
+    description: "Built a modern digital brand presence and conversion-focused web experience for Zorko, helping the business sharpen its platform identity and improve audience engagement.",
     results: {
-      followersGrowth: "-",
-      reachGrowth: "-",
-      engagementGrowth: "-",
-      websiteClicks: "-"
+      followersGrowth: "+220%",
+      reachGrowth: "+310%",
+      engagementGrowth: "+160%",
+      websiteClicks: "+190%"
     },
     whatWeDid: [
-      "Logo System",
-      "Typography Selection",
-      "Corporate Stationery",
-      "Digital Brand Book"
+      "Brand Identity Refresh",
+      "Landing Page Design",
+      "UX Optimization",
+      "Campaign Growth Strategy"
     ]
   },
   {

@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "chmod +x ./node_modules/.bin/vite && vite build",
+    "build": "node -e \"const fs=require('fs'); const path=require('path'); const candidates=['node_modules/.bin/vite','node_modules/.bin/vite.cmd']; for (const candidate of candidates) { try { const full = path.resolve(candidate); fs.chmodSync(full, 0o755); } catch (error) {} }\" && vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
