@@ -123,14 +123,14 @@ export const projects = [
   {
     id: "zorko",
     title: "Zorko",
-    category: "Technology",
-    service: "Web Development",
+    category: "Food",
+    service: "Instagram",
     handle: "zorko.in",
     followers: "18.6K",
     reach: "2.4M",
     engagement: "7.9%",
     image: "https://zorko.in/wp-content/uploads/2026/02/zorko-new-logo-1.webp",
-    description: "Built a modern digital brand presence and conversion-focused web experience for Zorko, helping the business sharpen its platform identity and improve audience engagement.",
+    description: "Created a bold food-brand storytelling campaign for Zorko with reel-first content, strong hooks, and social visuals designed to boost engagement and product discoverability.",
     results: {
       followersGrowth: "+220%",
       reachGrowth: "+310%",
@@ -138,10 +138,10 @@ export const projects = [
       websiteClicks: "+190%"
     },
     whatWeDid: [
-      "Brand Identity Refresh",
-      "Landing Page Design",
-      "UX Optimization",
-      "Campaign Growth Strategy"
+      "Reel Strategy",
+      "Food Brand Storytelling",
+      "Short-form Content Production",
+      "Engagement Campaign Design"
     ]
   },
   {
@@ -289,3 +289,25 @@ export const projects = [
     ]
   }
 ];
+
+const STORAGE_KEY = 'growvora_custom_projects';
+
+export const getProjects = () => {
+  try {
+    const customProjects = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+    return [...projects, ...customProjects];
+  } catch (error) {
+    return [...projects];
+  }
+};
+
+export const saveProjects = (items) => {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+};
+
+export const addProject = (project) => {
+  const customProjects = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+  const nextProjects = [...customProjects, project];
+  saveProjects(nextProjects);
+  return getProjects();
+};

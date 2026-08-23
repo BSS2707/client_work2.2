@@ -4,11 +4,12 @@ import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import ProjectModal from '../../components/ProjectModal/ProjectModal';
 import CTASection from '../../components/CTASection/CTASection';
-import { projects } from '../../data/projects';
+import { getProjects } from '../../data/projects';
 import '../Projects/Projects.scss';
 
 const InstagramManagement = () => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const projects = getProjects();
   
   // Filter only instagram projects
   const instagramProjects = projects.filter(p => p.service === 'Instagram');

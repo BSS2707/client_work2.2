@@ -5,13 +5,14 @@ import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import ProjectModal from '../../components/ProjectModal/ProjectModal';
 import CTASection from '../../components/CTASection/CTASection';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
-import { projects } from '../../data/projects';
+import { getProjects } from '../../data/projects';
 import './Projects.scss';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [activeFilter, setActiveFilter] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
+  const projects = getProjects();
   
   const filters = ['All', 'Instagram', 'Web Development', 'Graphic Design', 'Branding'];
   

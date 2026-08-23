@@ -3,11 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 import ProjectModal from '../../components/ProjectModal/ProjectModal';
 import CTASection from '../../components/CTASection/CTASection';
-import { projects } from '../../data/projects';
+import { getProjects } from '../../data/projects';
 import '../Projects/Projects.scss';
 
 const WebDevelopment = () => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const projects = getProjects();
   
   // Filter only web projects
   const webProjects = projects.filter(p => p.service === 'Web Development');

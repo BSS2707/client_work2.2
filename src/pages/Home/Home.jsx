@@ -11,13 +11,14 @@ import CTASection from '../../components/CTASection/CTASection';
 import VideoModal from '../../components/VideoModal/VideoModal';
 import ProjectModal from '../../components/ProjectModal/ProjectModal';
 import { services } from '../../data/services';
-import { projects } from '../../data/projects';
+import { getProjects } from '../../data/projects';
 import { team } from '../../data/team';
 import './Home.scss';
 
 const Home = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+  const projects = getProjects();
 
   const featuredProjects = [
     projects.find((project) => project.id === 'zorko'),

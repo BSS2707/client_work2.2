@@ -1,34 +1,82 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { projects } from '../../data/projects';
+import { addProject, getProjects } from '../../data/projects';
 import './Dashboard.scss';
 
+const emptyForm = {
+  title: '',
+  category: 'Food',
+  service: 'Instagram',
+  image: '',
+  description: ''
+};
+
 const Dashboard = () => {
+  const [projects, setProjects] = useState(() => getProjects());
+  const [form, setForm] = useState(emptyForm);
+
   const spotlightProjects = [
     projects.find((project) => project.id === 'zorko'),
     ...projects.filter((project) => project.id !== 'zorko').slice(0, 2)
   ].filter(Boolean);
 
   const stats = [
-    { label: 'Active Projects', value: '08', change: '+2 this month' },
+    { label: 'Active Projects', value: String(projects.length), change: '+2 this month' },
     { label: 'Campaign Reach', value: '5.4M', change: '+18% growth' },
     { label: 'Avg. Engagement', value: '9.7%', change: '+1.8% vs last month' },
     { label: 'Leads Generated', value: '1.2K', change: '+26% conversion lift' }
   ];
 
   const activityFeed = [
-    { title: 'Zorko launch campaign published', detail: 'Brand and landing page refresh went live.', time: '2 hours ago', tone: 'success' },
-    { title: 'New creative sprint started', detail: 'Instagram strategy update for the beauty portfolio.', time: '6 hours ago', tone: 'info' },
-    { title: 'Website traffic surged', detail: 'Organic visitor growth crossed 2.4M monthly reach.', time: '1 day ago', tone: 'warning' },
+    { title: 'Zorko launch campaign published', detail: 'Brand and reel strategy went live.', time: '2 hours ago', tone: 'success' },
+    { title: 'New creative sprint started', detail: 'Instagram strategy update for the food portfolio.', time: '6 hours ago', tone: 'info' },
+    { title: 'Content performance surged', detail: 'Short-form content reached a new high on weekly engagement.', time: '1 day ago', tone: 'warning' },
     { title: 'Client report shared', detail: 'Performance summary sent to the Growth team.', time: '2 days ago', tone: 'neutral' }
   ];
 
   const updates = [
-    { title: 'Zorko brand refresh', status: 'Live', text: 'New identity and performance-ready landing page are now active on the client side.' },
-    { title: 'Instagram execution plan', status: 'In Review', text: 'Content calendar and short-form tactics are being refined for Q4 growth.' },
-    { title: 'Conversion optimization', status: 'Improving', text: 'Landing pages are being tested for stronger click-through and lead capture.' },
+    { title: 'Zorko brand refresh', status: 'Live', text: 'New identity and reel-first storytelling are active and performing well.' },
+    { title: 'Instagram execution plan', status: 'In Review', text: 'Content calendar and short-form tactics are being refined for new launches.' },
+    { title: 'Conversion optimization', status: 'Improving', text: 'Landing pages and content hooks are being tested for stronger click-through and lead capture.' },
     { title: 'Portfolio expansion', status: 'New', text: 'Fresh service showcases and client wins are being added to the case studies library.' }
   ];
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if (!form.title.trim() || !form.description.trim()) {
+      return;
+    }
+
+    const newProject = {
+      id: `${form.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}-${Date.now()}`,
+      title: form.title.trim(),
+      category: form.category || 'Food',
+      service: form.service || 'Instagram',
+      handle: `@${form.title.trim().toLowerCase().replace(/\s+/g, '')}`,
+      followers: 'New',
+      reach: 'New',
+      engagement: 'New',
+      image: form.image || 'https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=1200&auto=format&fit=crop',
+      description: form.description.trim(),
+      results: {
+        followersGrowth: 'New',
+        reachGrowth: 'New',
+        engagementGrowth: 'New',
+        websiteClicks: 'New'
+      },
+      whatWeDid: ['Content Strategy', 'Reel Production', 'Audience Growth', 'Campaign Execution']
+    };
+
+    addProject(newProject);
+    setProjects(getProjects());
+    setForm(emptyForm);
+  };
 
   return (
     <div className="dashboard-page pt-20">
@@ -98,6 +146,59 @@ const Dashboard = () => {
             </ul>
           </aside>
         </div>
+
+        <section className="panel panel-form">
+          <div className="panel-header">
+            <h2>Add new project</h2>
+          </div>
+
+          <form className="project-form" onSubmit={handleSubmit}>
+            <div className="field-row">
+              <label>
+                <span>Project name</span>
+                <input type="text" name="title" value={form.title} onChange={handleChange} placeholder="Enter project name" />
+              </label>
+
+              <label>
+                <span>Category</span>
+                <select name="category" value={form.category} onChange={handleChange}>
+                  <option value="Food">Food</option>
+                  <option value="Fashion">Fashion</option>
+                  <option value="Beauty">Beauty</option>
+                  <option value="Fitness">Fitness</option>
+                  <option value="Travel">Travel</option>
+                  <option value="Technology">Technology</option>
+                </select>
+              </label>
+            </div>
+
+            <div className="field-row">
+              <label>
+                <span>Service</span>
+                <select name="service" value={form.service} onChange={handleChange}>
+                  <option value="Instagram">Instagram</option>
+                  <option value="Web Development">Web Development</option>
+                  <option value="Branding">Branding</option>
+                  <option value="Graphic Design">Graphic Design</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Image URL</span>
+                <input type="url" name="image" value={form.image} onChange={handleChange} placeholder="https://example.com/image.jpg" />
+              </label>
+            </div>
+
+            <label>
+              <span>Description</span>
+              <textarea name="description" value={form.description} onChange={handleChange} rows="4" placeholder="Describe the project result, campaign, or reel strategy" />
+            </label>
+
+            <div className="form-actions">
+              <button type="submit" className="btn btn-primary">Save project</button>
+            </div>
+          </form>
+        </section>
 
         <section className="panel panel-full">
           <div className="panel-header">
