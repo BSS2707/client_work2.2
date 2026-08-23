@@ -35,7 +35,7 @@ const Footer = () => {
             <h4>Contact Info</h4>
             <div className="contact-item">
               <FiMail />
-              <span>hello@growvora.co.in</span>
+              <span>novamanagement819@gmail.com</span>
             </div>
             <div className="contact-item">
               <FiPhone />

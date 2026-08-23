@@ -106,7 +106,7 @@ const Contact = () => {
                 <FiMail className="icon" />
                 <div>
                   <h4>Email Us</h4>
-                  <p>hello@growvora.co.in</p>
+                  <p>novamanagement819@gmail.com</p>
                 </div>
               </div>
               <div className="info-card">

@@ -13,7 +13,7 @@ const InstagramManagement = () => {
   const instagramProjects = projects.filter(p => p.service === 'Instagram');
   const [activeCategory, setActiveCategory] = useState('All Projects');
 
-  const categories = ['All Projects', 'Fashion', 'Food', 'Fitness', 'Education', 'Real Estate', 'Travel', 'Beauty', 'Technology'];
+  const categories = ['All Projects', 'Fashion', 'Food', 'Fitness', 'Education', 'Travel', 'Beauty', 'Technology'];
 
   const filteredProjects = activeCategory === 'All Projects'
     ? instagramProjects
@@ -48,7 +48,7 @@ const InstagramManagement = () => {
             </div>
           </div>
 
-          <aside className="performance-card">
+          <aside className="performance-card white-card">
             <div className="performance-header">
               <h3>Performance overview</h3>
               <span className="pill">Growth</span>
