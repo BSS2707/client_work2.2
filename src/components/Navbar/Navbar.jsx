@@ -51,6 +51,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Home', path: '/' },
+    { name: 'Dashboard', path: '/dashboard' },
     { name: 'Instagram Management', path: '/instagram-management' },
     { name: 'Web Services', path: '/web-development' },
     { name: 'Graphic Designing', path: '/graphic-designing' },
