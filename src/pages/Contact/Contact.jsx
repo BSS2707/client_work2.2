@@ -43,11 +43,46 @@ const Contact = () => {
     return Object.keys(tempErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (validate()) {
+    if (!validate()) return;
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/novamanagement819@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          service: formData.service,
+          budget: formData.budget,
+          message: formData.message
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('Submission failed');
+      }
+
       setIsSubmitted(true);
-      // Here you would normally send data to backend
+      setFormData({
+        fullName: '',
+        email: '',
+        phone: '',
+        company: '',
+        service: '',
+        budget: '',
+        message: ''
+      });
+    } catch (error) {
+      setErrors({
+        submit: 'Something went wrong while sending your message. Please try again or email us directly.'
+      });
     }
   };
 
@@ -163,9 +198,12 @@ const Contact = () => {
                   {errors.message && <span className="error-message">{errors.message}</span>}
                 </div>
                 
+                {errors.submit && <div className="error-message text-center mb-4">{errors.submit}</div>}
+                
                 <Button type="submit" variant="primary" size="lg" className="w-full">
                   Send Message
                 </Button>
+                {errors.submit && <span className="error-message mt-3 d-block">{errors.submit}</span>}
               </form>
             )}
           </motion.div>
