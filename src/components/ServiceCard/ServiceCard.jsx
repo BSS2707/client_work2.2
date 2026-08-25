@@ -11,6 +11,8 @@ const iconMap = {
 };
 
 const ServiceCard = ({ service, index }) => {
+  const isImageUrl = service.icon.startsWith('http');
+  
   return (
     <motion.div 
       className="service-card card"
@@ -20,7 +22,11 @@ const ServiceCard = ({ service, index }) => {
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
       <div className="service-icon">
-        {iconMap[service.icon]}
+        {isImageUrl ? (
+          <img src={service.icon} alt={service.title} />
+        ) : (
+          iconMap[service.icon]
+        )}
       </div>
       <h3>{service.title}</h3>
       <p>{service.description}</p>

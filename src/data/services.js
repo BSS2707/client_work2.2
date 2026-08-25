@@ -23,7 +23,7 @@ export const services = [
       "Website Maintenance"
     ],
     path: "/web-development",
-    icon: "web"
+    icon: "https://cdn.corenexis.com/f/pzO06agieXb.png"
   },
   {
     id: "graphic-designing",
