@@ -1,30 +1,37 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FiArrowRight } from 'react-icons/fi';
-import Button from '../Button/Button';
+import { FiArrowUpRight } from 'react-icons/fi';
 import './CTASection.scss';
 
 const CTASection = () => {
   return (
-    <section className="cta-section">
+    <section className="fullscreen-editorial-cta">
       <div className="container">
-        <motion.div 
-          className="cta-card"
-          initial={{ opacity: 0, y: 40 }}
+        <motion.div
+          className="cta-editorial-inner"
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div className="cta-content">
-            <h2>Ready to scale your<br />digital presence?</h2>
-            <p>Skip the vanity metrics. We build tailored marketing systems designed to drive actual revenue and sustainable growth for your business.</p>
-            <Button to="/contact" variant="primary" size="lg" icon={<FiArrowRight />}>
-              Start a Conversation
-            </Button>
-          </div>
-          <div className="cta-visual">
-            <div className="glow"></div>
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop" alt="Growth" className="cta-image" />
+          <span className="label-micro">NEXT STEPS</span>
+
+          <h2 className="cta-giant-headline">
+            READY TO<br />
+            <span className="accent-glow">GROW BEYOND</span><br />
+            EXPECTATIONS?
+          </h2>
+
+          <p className="cta-subtext">
+            We partner with ambitious founders and brands to engineer exponential digital growth. Let's build something unforgettable.
+          </p>
+
+          <div className="cta-action-area">
+            <Link to="/contact" className="magnetic-cta-btn">
+              <span>START A PROJECT</span>
+              <FiArrowUpRight className="cta-arrow" />
+            </Link>
           </div>
         </motion.div>
       </div>

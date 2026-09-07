@@ -1,57 +1,77 @@
 h1, h2, h3, h4, h5, h6 {
   color: $text-primary;
-  font-weight: 700;
-  line-height: 1.2;
+  font-family: $font-heading;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 40px;
   
   @media (min-width: 768px) {
-    font-size: 44px;
+    font-size: 68px;
   }
   
   @media (min-width: 1024px) {
-    font-size: 64px;
-    line-height: 1.1;
+    font-size: 96px;
+    line-height: 0.95;
+  }
+
+  @media (min-width: 1440px) {
+    font-size: 116px;
   }
 }
 
 h2 {
-  font-size: 26px;
+  font-size: 32px;
   
   @media (min-width: 768px) {
-    font-size: 36px;
+    font-size: 52px;
   }
   
   @media (min-width: 1024px) {
-    font-size: 48px;
+    font-size: 72px;
+    line-height: 1.0;
   }
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 24px;
   
   @media (min-width: 768px) {
-    font-size: 24px;
+    font-size: 32px;
   }
 }
 
 p {
-  font-size: 15px;
+  font-family: $font-primary;
+  font-size: 16px;
+  color: $text-secondary;
+  line-height: 1.7;
   
   @media (min-width: 768px) {
-    font-size: 16px;
-  }
-  
-  @media (min-width: 1024px) {
     font-size: 18px;
   }
 }
 
+.text-accent {
+  color: $accent-growth !important;
+}
+
 .text-gradient {
-  background: $logo-gradient;
+  background: linear-gradient(135deg, $accent-growth 0%, #FFFFFF 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.label-micro {
+  font-family: $font-editorial;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: $accent-growth;
 }

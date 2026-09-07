@@ -1,53 +1,104 @@
+@import '../base/variables';
+
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 14px 28px;
+  padding: 16px 32px;
   border-radius: $border-radius-pill;
-  font-weight: 600;
-  font-size: 16px;
+  font-family: $font-heading;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   transition: $transition-base;
   white-space: nowrap;
+  cursor: pointer;
   
   &.btn-primary {
-    background: $primary-gradient;
-    color: $white;
-    box-shadow: 0 4px 15px rgba(23, 105, 255, 0.3);
+    background: $accent-growth;
+    color: #090909;
+    box-shadow: 0 6px 25px rgba(198, 255, 59, 0.3);
+    border: 1px solid $accent-growth;
     
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(23, 105, 255, 0.4);
+      box-shadow: 0 10px 35px rgba(198, 255, 59, 0.5);
+      background: #d4ff55;
+    }
+
+    body.light-mode & {
+      background: #090909;
+      color: #FFFFFF;
+      border-color: #090909;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+
+      &:hover {
+        background: #16A34A;
+        border-color: #16A34A;
+        box-shadow: 0 8px 25px rgba(22, 163, 74, 0.3);
+      }
     }
   }
   
   &.btn-outline {
     background: transparent;
-    color: $primary-blue;
-    border: 1px solid $primary-blue;
+    color: #F5F5F0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     
     &:hover {
-      background: rgba(23, 105, 255, 0.05);
+      background: rgba(198, 255, 59, 0.1);
+      border-color: $accent-growth;
+      color: $accent-growth;
       transform: translateY(-2px);
+    }
+
+    body.light-mode & {
+      color: #090909;
+      border-color: rgba(0, 0, 0, 0.2);
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.05);
+        border-color: #090909;
+        color: #090909;
+      }
     }
   }
   
   &.btn-text {
     padding: 0;
-    color: $primary-blue;
+    color: $accent-growth;
+    background: transparent;
+    border: none;
+    font-family: $font-editorial;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     
     &:hover {
       gap: 12px;
+      color: #FFFFFF;
+    }
+
+    body.light-mode & {
+      color: #16A34A;
+
+      &:hover {
+        color: #090909;
+      }
     }
   }
   
   &.btn-sm {
     padding: 10px 20px;
-    font-size: 14px;
+    font-size: 13px;
   }
   
   &.btn-lg {
-    padding: 16px 36px;
-    font-size: 18px;
+    padding: 20px 42px;
+    font-size: 16px;
   }
 }

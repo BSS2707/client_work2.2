@@ -1,17 +1,23 @@
+@import '../../styles/base/variables';
+@import '../../styles/base/mixins';
+
 .footer {
-  background: $white;
-  border-top: 1px solid $border-light;
-  padding: 60px 0 24px;
+  background: #090909;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 100px 0 36px;
   margin-top: auto;
+  position: relative;
+  z-index: 2;
   
   .footer-content {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 48px;
-    margin-bottom: 60px;
+    grid-template-columns: 2fr 1fr 1.2fr;
+    gap: 60px;
+    margin-bottom: 80px;
     
     @include responsive(tablet) {
       grid-template-columns: 1fr 1fr;
+      gap: 40px;
     }
     @include responsive(mobile) {
       grid-template-columns: 1fr;
@@ -21,24 +27,36 @@
   
   .footer-brand {
     .logo {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 12px;
-      font-size: 24px;
+      gap: 6px;
+      font-family: $font-heading;
+      font-size: 26px;
       font-weight: 800;
-      color: $text-primary;
-      margin-bottom: 20px;
+      letter-spacing: 0.08em;
+      color: #F5F5F0;
+      margin-bottom: 24px;
       
+      .brand-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: $accent-growth;
+        box-shadow: 0 0 10px $accent-growth;
+      }
+
       img {
-        height: 60px;
+        height: 48px;
         width: auto;
       }
     }
     
     p {
-      color: $text-secondary;
-      margin-bottom: 24px;
-      max-width: 400px;
+      color: #8A8A8A;
+      margin-bottom: 32px;
+      max-width: 420px;
+      font-size: 15px;
+      line-height: 1.7;
     }
     
     .social-links {
@@ -46,18 +64,22 @@
       gap: 16px;
       
       a {
-        width: 40px;
-        height: 40px;
+        width: 44px;
+        height: 44px;
         border-radius: 50%;
-        background: $background;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
         @include flex-center;
-        color: $text-primary;
+        color: #F5F5F0;
+        font-size: 18px;
         transition: $transition-base;
         
         &:hover {
-          background: $primary-green;
-          color: $white;
+          background: $accent-growth;
+          color: #090909;
+          border-color: $accent-growth;
           transform: translateY(-3px);
+          box-shadow: 0 0 20px rgba(198, 255, 59, 0.35);
         }
       }
     }
@@ -65,8 +87,13 @@
   
   .footer-links {
     h4 {
+      font-family: $font-heading;
       font-size: 18px;
-      margin-bottom: 24px;
+      font-weight: 700;
+      color: #F5F5F0;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
     }
     
     ul {
@@ -75,11 +102,15 @@
       gap: 16px;
       
       a {
-        color: $text-secondary;
+        font-family: $font-editorial;
+        font-size: 14px;
+        color: #8A8A8A;
+        letter-spacing: 0.04em;
         transition: $transition-base;
         
         &:hover {
-          color: $primary-green;
+          color: $accent-growth;
+          transform: translateX(4px);
         }
       }
     }
@@ -87,29 +118,48 @@
   
   .footer-contact {
     h4 {
+      font-family: $font-heading;
       font-size: 18px;
-      margin-bottom: 24px;
+      font-weight: 700;
+      color: #F5F5F0;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
     }
     
     .contact-item {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
-      color: $text-secondary;
+      gap: 14px;
+      margin-bottom: 18px;
+      color: #8A8A8A;
+      font-family: $font-editorial;
+      font-size: 14px;
       
       svg {
-        color: $primary-green;
-        font-size: 20px;
+        color: $accent-growth;
+        font-size: 18px;
+        flex-shrink: 0;
       }
     }
   }
   
   .footer-bottom {
-    padding-top: 24px;
-    border-top: 1px solid $border-light;
-    text-align: center;
-    color: $text-secondary;
-    font-size: 14px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #555555;
+    font-family: $font-editorial;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    @include responsive(mobile) {
+      flex-direction: column;
+      gap: 12px;
+      text-align: center;
+    }
   }
 }

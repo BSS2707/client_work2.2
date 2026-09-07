@@ -6,16 +6,33 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: $bg-black;
 }
 
 body {
   font-family: $font-primary;
-  background-color: $background;
-  color: $text-secondary;
+  background-color: $bg-black;
+  color: $text-light;
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
+
+  // Film grain subtle overlay
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 0);
+    background-size: 24px 24px;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.6;
+  }
 }
 
 a {
@@ -44,6 +61,7 @@ img {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: $bg-black;
 }
 
 .main-content {
@@ -52,7 +70,11 @@ img {
 
 .container {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1380px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 32px;
+
+  @media (max-width: 768px) {
+    padding: 0 20px;
+  }
 }

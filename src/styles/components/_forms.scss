@@ -1,45 +1,95 @@
+@import '../base/variables';
+
 .form-group {
   margin-bottom: 24px;
   
   label {
     display: block;
     margin-bottom: 8px;
-    font-weight: 500;
-    color: $text-primary;
-    font-size: 15px;
+    font-family: $font-editorial;
+    font-weight: 600;
+    color: #F5F5F0;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+    body.light-mode & {
+      color: #090909;
+    }
   }
   
   .form-control {
     width: 100%;
-    padding: 16px;
-    border-radius: 12px;
-    border: 1px solid $border-light;
-    background: $white;
-    font-family: inherit;
-    font-size: 16px;
-    color: $text-primary;
+    padding: 16px 18px;
+    border-radius: $border-radius-md;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: #181818;
+    font-family: $font-primary;
+    font-size: 15px;
+    color: #F5F5F0;
     transition: $transition-base;
     
     &:focus {
       outline: none;
-      border-color: $primary-blue;
-      box-shadow: 0 0 0 4px rgba(23, 105, 255, 0.1);
+      border-color: $accent-growth;
+      box-shadow: 0 0 0 3px rgba(198, 255, 59, 0.2);
+      background: #1e1e1e;
     }
     
     &::placeholder {
-      color: #9CA3AF;
+      color: #777777;
+    }
+
+    body.light-mode & {
+      background: #FFFFFF;
+      border-color: rgba(0, 0, 0, 0.12);
+      color: #090909;
+
+      &:focus {
+        border-color: #16A34A;
+        box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+        background: #FFFFFF;
+      }
+
+      &::placeholder {
+        color: #999999;
+      }
+    }
+  }
+
+  select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C6FF3B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 16px;
+    cursor: pointer;
+
+    body.light-mode & {
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23090909' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    }
+
+    option {
+      background: #181818;
+      color: #F5F5F0;
+
+      body.light-mode & {
+        background: #FFFFFF;
+        color: #090909;
+      }
     }
   }
   
   textarea.form-control {
     resize: vertical;
-    min-height: 120px;
+    min-height: 130px;
   }
   
   .error-message {
-    color: $error;
+    color: #FF5555;
     font-size: 13px;
     margin-top: 6px;
     display: block;
+    font-weight: 500;
   }
 }

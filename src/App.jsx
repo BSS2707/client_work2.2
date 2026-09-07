@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+import LoadingScreen from './components/LoadingScreen/LoadingScreen';
+import Background3DCanvas from './components/3D/Background3DCanvas';
+import Custom3DCursor from './components/3D/Custom3DCursor';
 
 import Home from './pages/Home/Home';
 import Dashboard from './pages/Dashboard/Dashboard';
@@ -17,29 +20,37 @@ import Contact from './pages/Contact/Contact';
 import NotFound from './pages/NotFound/NotFound';
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
-    <Router>
-      <ScrollToTop />
-      <div className="app-container">
-        <Navbar />
-        <main className="main-content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/instagram-management" element={<InstagramManagement />} />
-            <Route path="/web-development" element={<WebDevelopment />} />
-            <Route path="/graphic-designing" element={<GraphicDesigning />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/projects/:id" element={<ProjectDetails />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/team" element={<Team />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <>
+      <Custom3DCursor />
+      <LoadingScreen onLoadingComplete={() => setIsLoading(false)} />
+      <Background3DCanvas />
+      
+      <Router>
+        <ScrollToTop />
+        <div className="app-container" style={{ position: 'relative', zIndex: 1 }}>
+          <Navbar />
+          <main className="main-content">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/instagram-management" element={<InstagramManagement />} />
+              <Route path="/web-development" element={<WebDevelopment />} />
+              <Route path="/graphic-designing" element={<GraphicDesigning />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/projects/:id" element={<ProjectDetails />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/team" element={<Team />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </>
   );
 }
 

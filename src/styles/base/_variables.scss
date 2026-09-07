@@ -1,38 +1,59 @@
-$primary-green: #32A852;
-$primary-green-dark: #218838;
+// GROWTH IN MOTION Palette
+$bg-black: #090909;
+$surface-dark: #111111;
+$surface-elevated: #181818;
+$surface-card: rgba(255, 255, 255, 0.03);
 
-$primary-blue: #1769FF;
-$primary-blue-dark: #0B4FD8;
+$accent-growth: #C6FF3B; // Electric Growth Green
+$accent-growth-glow: rgba(198, 255, 59, 0.35);
 
-$accent-purple: #6C3BFF;
-$accent-pink: #FF2D78;
-$accent-orange: #FF8A00;
+$text-light: #F5F5F0;
+$text-muted: #8A8A8A;
+$text-dim: #555555;
 
-$dark-navy: #07144A;
-$text-primary: #0B1746;
-$text-secondary: #4F5B7A;
+$border-subtle: rgba(255, 255, 255, 0.08);
+$border-accent: rgba(198, 255, 59, 0.3);
+
+// Legacy variable aliases mapped to the new theme for seamless backwards compatibility
+$primary-green: $accent-growth;
+$primary-green-dark: #9acc15;
+$primary-blue: #C6FF3B;
+$primary-blue-dark: #9acc15;
+
+$accent-purple: #9D7BFF;
+$accent-pink: #FF3366;
+$accent-orange: #FF9900;
+$accent-cyan: #00F0FF;
+
+$dark-navy: #090909;
+$text-primary: $text-light;
+$text-secondary: $text-muted;
 
 $white: #FFFFFF;
-$background: #F8FAFF;
+$background: $bg-black;
+$border-light: $border-subtle;
 
-$border-light: #E8ECF5;
+$success: $accent-growth;
+$error: #FF4444;
+$warning: #FFBB00;
 
-$success: #32A852;
-$error: #E53935;
-$warning: #FF9800;
+$primary-gradient: linear-gradient(135deg, $accent-growth 0%, #FFFFFF 100%);
+$logo-gradient: linear-gradient(135deg, $accent-growth, #00F0FF, #9D7BFF);
 
-$primary-gradient: linear-gradient(135deg, $primary-green 0%, $primary-blue 100%);
-$logo-gradient: linear-gradient(135deg, $primary-green, $primary-blue, $accent-purple);
+$shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.5);
+$shadow-md: 0 10px 30px rgba(0, 0, 0, 0.7);
+$shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.9);
+$shadow-glow: 0 0 30px $accent-growth-glow;
 
-$shadow-sm: 0 4px 12px rgba(11, 23, 70, 0.05);
-$shadow-md: 0 8px 24px rgba(11, 23, 70, 0.08);
-$shadow-lg: 0 16px 48px rgba(11, 23, 70, 0.12);
+$border-radius-sm: 4px;
+$border-radius-md: 12px;
+$border-radius-lg: 20px;
+$border-radius-pill: 100px;
 
-$border-radius-sm: 8px;
-$border-radius-md: 18px;
-$border-radius-lg: 28px;
-$border-radius-pill: 50px;
-
+$font-heading: 'Syne', sans-serif;
+$font-editorial: 'Space Grotesk', sans-serif;
 $font-primary: 'Inter', sans-serif;
-$transition-base: all 0.3s ease;
-$transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+$transition-base: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+$transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+$transition-bounce: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);

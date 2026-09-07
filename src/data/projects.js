@@ -129,7 +129,8 @@ export const projects = [
     followers: "18.6K",
     reach: "2.4M",
     engagement: "7.9%",
-    image: "https://zorko.in/wp-content/uploads/2026/02/zorko-new-logo-1.webp",
+    image: "https://zorko.in/wp-content/uploads/2026/02/zorko-new-logo.png",
+    logo: "https://zorko.in/wp-content/uploads/2026/02/zorko-new-logo.png",
     description: "Created a bold food-brand storytelling campaign for Zorko with reel-first content, strong hooks, and social visuals designed to boost engagement and product discoverability.",
     results: {
       followersGrowth: "+220%",

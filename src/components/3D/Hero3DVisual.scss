@@ -1,0 +1,328 @@
+@import '../../styles/base/variables';
+
+.hero-3d-clean-stage {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  perspective: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+
+  @media (max-width: 768px) {
+    height: 420px;
+  }
+}
+
+.hero-3d-pivot {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  transition: transform 0.1s cubic-bezier(0.1, 1, 0.1, 1);
+
+  @media (max-width: 768px) {
+    width: 320px;
+    height: 320px;
+  }
+}
+
+// Orbit Rings
+.orbit-ring {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  transform-style: preserve-3d;
+
+  &.ring-outer {
+    width: 380px;
+    height: 380px;
+    border: 1.5px dashed rgba(198, 255, 59, 0.35);
+    animation: rotateRing 30s linear infinite;
+
+    body.light-mode & {
+      border-color: rgba(22, 163, 74, 0.3);
+    }
+  }
+
+  &.ring-mid {
+    width: 310px;
+    height: 310px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 25px rgba(198, 255, 59, 0.08);
+    animation: rotateRingReverse 24s linear infinite;
+
+    body.light-mode & {
+      border-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &.ring-inner {
+    width: 240px;
+    height: 240px;
+    border: 1px dashed rgba(198, 255, 59, 0.2);
+    animation: rotateRing 18s linear infinite;
+
+    body.light-mode & {
+      border-color: rgba(22, 163, 74, 0.2);
+    }
+  }
+}
+
+@keyframes rotateRing {
+  from { transform: rotateZ(0deg); }
+  to { transform: rotateZ(360deg); }
+}
+
+@keyframes rotateRingReverse {
+  from { transform: rotateZ(360deg); }
+  to { transform: rotateZ(0deg); }
+}
+
+// Ambient Glow Halo
+.hero-center-halo {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(198, 255, 59, 0.18) 0%, rgba(198, 255, 59, 0.04) 50%, transparent 70%);
+  filter: blur(25px);
+  pointer-events: none;
+}
+
+// Central Brand Core
+.hero-brand-core {
+  position: relative;
+  transform-style: preserve-3d;
+  z-index: 5;
+
+  .core-glass-disc {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #1c1c1c 0%, #111111 70%, #090909 100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 
+      0 20px 50px rgba(0, 0, 0, 0.8),
+      0 0 35px rgba(198, 255, 59, 0.2),
+      inset 0 0 20px rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    position: relative;
+
+    body.light-mode & {
+      background: radial-gradient(circle at 35% 35%, #FFFFFF 0%, #F0F4FF 70%, #E2ECF8 100%);
+      border-color: rgba(0, 0, 0, 0.08);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1), 0 0 30px rgba(22, 163, 74, 0.15);
+    }
+
+    @media (max-width: 768px) {
+      width: 150px;
+      height: 150px;
+    }
+
+    .core-logo-image {
+      width: 75px;
+      height: 75px;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 12px rgba(198, 255, 59, 0.3));
+
+      body.light-mode & {
+        filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
+      }
+
+      @media (max-width: 768px) {
+        width: 60px;
+        height: 60px;
+      }
+    }
+
+    .core-brand-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: $font-editorial;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: $accent-growth;
+      background: rgba(198, 255, 59, 0.08);
+      border: 1px solid rgba(198, 255, 59, 0.2);
+      padding: 4px 10px;
+      border-radius: $border-radius-pill;
+
+      body.light-mode & {
+        color: #16A34A;
+        background: rgba(22, 163, 74, 0.08);
+        border-color: rgba(22, 163, 74, 0.2);
+      }
+
+      .live-dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: $accent-growth;
+        box-shadow: 0 0 6px $accent-growth;
+
+        body.light-mode & {
+          background: #16A34A;
+        }
+      }
+    }
+  }
+}
+
+// Floating 3D Metric Badges
+.floating-metric-badge {
+  position: absolute;
+  background: rgba(17, 17, 17, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+  border-radius: $border-radius-md;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: all 0.3s ease;
+
+  body.light-mode & {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  }
+
+  &:hover {
+    border-color: rgba(198, 255, 59, 0.4);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 25px rgba(198, 255, 59, 0.2);
+
+    body.light-mode & {
+      border-color: #16A34A;
+      box-shadow: 0 16px 40px rgba(22, 163, 74, 0.15);
+    }
+  }
+
+  .badge-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    flex-shrink: 0;
+
+    &.green {
+      background: rgba(198, 255, 59, 0.12);
+      color: $accent-growth;
+
+      body.light-mode & {
+        background: rgba(22, 163, 74, 0.12);
+        color: #16A34A;
+      }
+    }
+
+    &.white {
+      background: rgba(255, 255, 255, 0.08);
+      color: #F5F5F0;
+
+      body.light-mode & {
+        background: rgba(0, 0, 0, 0.05);
+        color: #090909;
+      }
+    }
+  }
+
+  .badge-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    .badge-label {
+      font-family: $font-editorial;
+      font-size: 10px;
+      font-weight: 600;
+      color: #8A8A8A;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+
+      body.light-mode & {
+        color: #666666;
+      }
+    }
+
+    .badge-value {
+      font-family: $font-heading;
+      font-size: 14px;
+      font-weight: 700;
+      color: #F5F5F0;
+
+      body.light-mode & {
+        color: #090909;
+      }
+
+      .highlight {
+        color: $accent-growth;
+
+        body.light-mode & {
+          color: #16A34A;
+        }
+      }
+    }
+  }
+
+  // Positioning
+  &.badge-roi {
+    top: -10px;
+    left: -25px;
+
+    @media (max-width: 768px) {
+      top: -15px;
+      left: -10px;
+      padding: 8px 12px;
+    }
+  }
+
+  &.badge-target {
+    top: 20px;
+    right: -35px;
+
+    @media (max-width: 768px) {
+      top: 10px;
+      right: -10px;
+      padding: 8px 12px;
+    }
+  }
+
+  &.badge-impressions {
+    bottom: -15px;
+    left: -30px;
+
+    @media (max-width: 768px) {
+      bottom: -15px;
+      left: -10px;
+      padding: 8px 12px;
+    }
+  }
+
+  &.badge-trust {
+    bottom: 25px;
+    right: -25px;
+
+    @media (max-width: 768px) {
+      bottom: 20px;
+      right: -10px;
+      padding: 8px 12px;
+    }
+  }
+}
