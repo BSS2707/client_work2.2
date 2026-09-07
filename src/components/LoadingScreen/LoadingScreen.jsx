@@ -10,23 +10,21 @@ const statusPhases = [
 ];
 
 const LoadingScreen = ({ onLoadingComplete }) => {
-  const [hasLoadedBefore, setHasLoadedBefore] = useState(() => {
-    return sessionStorage.getItem('growvora_preloaded') === 'true';
-  });
-  
   const [progress, setProgress] = useState(0);
   const [phaseIndex, setPhaseIndex] = useState(0);
   const [isFinishing, setIsFinishing] = useState(false);
   const [showFinalCall, setShowFinalCall] = useState(false);
-  const [isDone, setIsDone] = useState(hasLoadedBefore);
+  const [isDone, setIsDone] = useState(false);
 
   useEffect(() => {
-    if (hasLoadedBefore) {
-      if (onLoadingComplete) onLoadingComplete();
-      return;
+    // Clear any previous session flag so loading screen always shows on refresh/reopen
+    try {
+      sessionStorage.removeItem('growvora_preloaded');
+    } catch (e) {
+      // ignore
     }
 
-    const duration = 2000; // 2 seconds total
+    const duration = 1800; // 1.8 seconds total
     const intervalTime = 20;
     const step = 100 / (duration / intervalTime);
 
@@ -40,9 +38,8 @@ const LoadingScreen = ({ onLoadingComplete }) => {
 
           setTimeout(() => {
             setIsDone(true);
-            sessionStorage.setItem('growvora_preloaded', 'true');
             if (onLoadingComplete) onLoadingComplete();
-          }, 650);
+          }, 600);
 
           return 100;
         }
@@ -51,15 +48,14 @@ const LoadingScreen = ({ onLoadingComplete }) => {
     }, intervalTime);
 
     return () => clearInterval(timer);
-  }, [hasLoadedBefore, onLoadingComplete]);
+  }, [onLoadingComplete]);
 
   useEffect(() => {
-    if (hasLoadedBefore) return;
     if (progress < 25) setPhaseIndex(0);
     else if (progress < 50) setPhaseIndex(1);
     else if (progress < 75) setPhaseIndex(2);
     else setPhaseIndex(3);
-  }, [progress, hasLoadedBefore]);
+  }, [progress]);
 
   if (isDone) return null;
 
