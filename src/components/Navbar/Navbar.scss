@@ -36,7 +36,7 @@
     justify-content: space-between;
 
     @media (max-width: 768px) {
-      padding: 0 20px;
+      padding: 0 16px;
     }
   }
 
@@ -50,6 +50,13 @@
     font-weight: 800;
     letter-spacing: 0.08em;
     color: #F5F5F0;
+    flex-shrink: 0;
+
+    @media (max-width: 480px) {
+      font-size: 18px;
+      gap: 8px;
+      letter-spacing: 0.05em;
+    }
 
     body.light-mode & {
       color: #090909;
@@ -65,6 +72,13 @@
       justify-content: center;
       overflow: hidden;
       border: 1px solid rgba(255, 255, 255, 0.12);
+      flex-shrink: 0;
+
+      @media (max-width: 480px) {
+        width: 30px;
+        height: 30px;
+        border-radius: 6px;
+      }
 
       body.light-mode & {
         background: rgba(0, 0, 0, 0.04);
@@ -84,6 +98,7 @@
       border-radius: 50%;
       background: $accent-growth;
       box-shadow: 0 0 10px $accent-growth;
+      flex-shrink: 0;
 
       body.light-mode & {
         background: #16A34A;
@@ -297,11 +312,15 @@
     }
   }
 
-  // Right Actions: Theme Toggle & Let's Talk
+  // Right Actions: Theme Toggle & Let's Talk & Mobile Hamburger
   .nav-right-action {
     display: flex;
     align-items: center;
     gap: 16px;
+
+    @media (max-width: 768px) {
+      gap: 10px;
+    }
 
     .theme-toggle-btn {
       width: 42px;
@@ -315,7 +334,14 @@
       font-size: 18px;
       color: $accent-growth;
       cursor: pointer;
+      flex-shrink: 0;
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+      @media (max-width: 768px) {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+      }
 
       body.light-mode & {
         background: rgba(0, 0, 0, 0.05);
@@ -387,12 +413,31 @@
     }
 
     .mobile-hamburger {
-      font-size: 26px;
+      font-size: 22px;
       color: #F5F5F0;
       display: none;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: all 0.25s ease;
 
       body.light-mode & {
         color: #090909;
+        background: rgba(0, 0, 0, 0.05);
+        border-color: rgba(0, 0, 0, 0.1);
+      }
+
+      &:active {
+        transform: scale(0.92);
+        background: rgba(198, 255, 59, 0.15);
+        border-color: $accent-growth;
+        color: $accent-growth;
       }
 
       @media (max-width: 768px) {
@@ -415,17 +460,22 @@
   position: fixed;
   top: 0;
   right: 0;
-  width: 85%;
-  max-width: 420px;
+  width: 90%;
+  max-width: 380px;
   height: 100vh;
   background: #111111;
   border-left: 1px solid rgba(255, 255, 255, 0.08);
   z-index: 10002;
-  padding: 32px 24px;
+  padding: 28px 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow-y: auto;
+
+  @media (max-width: 480px) {
+    width: 92%;
+    padding: 20px 16px;
+  }
 
   body.light-mode & {
     background: #FFFFFF;

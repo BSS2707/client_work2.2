@@ -16,8 +16,12 @@
   position: relative;
 
   @media (max-width: 768px) {
-    padding: 120px 0 60px;
+    padding: 100px 0 40px;
     min-height: auto;
+  }
+
+  @media (max-width: 480px) {
+    padding: 90px 0 30px;
   }
 }
 
@@ -29,7 +33,7 @@
 
   @media (max-width: 1024px) {
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 40px;
   }
 }
 
@@ -53,6 +57,13 @@
     border-radius: $border-radius-pill;
     margin-bottom: 32px;
     align-self: flex-start;
+
+    @media (max-width: 480px) {
+      font-size: 10.5px;
+      padding: 6px 14px;
+      margin-bottom: 20px;
+      letter-spacing: 0.1em;
+    }
 
     .pulse-indicator {
       width: 6px;
@@ -78,7 +89,14 @@
     }
 
     @media (max-width: 768px) {
-      font-size: 42px;
+      font-size: 40px;
+      line-height: 0.98;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 32px;
+      word-break: break-word;
     }
 
     .electric-word {
@@ -95,7 +113,9 @@
     margin-bottom: 40px;
 
     @media (max-width: 768px) {
-      font-size: 16px;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 28px;
     }
   }
 
@@ -105,9 +125,10 @@
     gap: 24px;
 
     @media (max-width: 768px) {
+      width: 100%;
       flex-direction: column;
-      align-items: flex-start;
-      gap: 16px;
+      align-items: stretch;
+      gap: 12px;
     }
 
     .hero-primary-btn {
@@ -125,6 +146,14 @@
       border-radius: $border-radius-pill;
       box-shadow: 0 8px 30px rgba(198, 255, 59, 0.25);
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+      @media (max-width: 768px) {
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+        padding: 15px 24px;
+        font-size: 14px;
+      }
 
       .arrow {
         font-size: 18px;
@@ -156,6 +185,13 @@
       border: 1px solid rgba(255, 255, 255, 0.1);
       background: rgba(255, 255, 255, 0.03);
       transition: all 0.3s ease;
+
+      @media (max-width: 768px) {
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+        padding: 12px 20px;
+      }
 
       .play-icon-circle {
         width: 32px;

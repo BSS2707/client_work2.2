@@ -10,137 +10,178 @@
   }
 }
 
-.section-meta-header {
-  margin-bottom: 64px;
-
-  .label-micro {
-    display: inline-block;
-    margin-bottom: 12px;
-  }
-
-  .editorial-title {
-    font-size: 48px;
-    font-weight: 800;
-    color: #F5F5F0;
-    letter-spacing: -0.02em;
+  .section-meta-header {
+    margin-bottom: 64px;
 
     @media (max-width: 768px) {
-      font-size: 32px;
-    }
-  }
-}
-
-.services-interactive-list {
-  display: flex;
-  flex-direction: column;
-}
-
-.service-interactive-row {
-  position: relative;
-  padding: 36px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  cursor: pointer;
-  transition: all 0.3s ease;
-
-  .row-accent-line {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: $accent-growth;
-    box-shadow: 0 0 12px $accent-growth;
-    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .row-main-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 24px;
-
-    @media (max-width: 768px) {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 12px;
-    }
-  }
-
-  .row-left {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-
-    .row-number {
-      font-family: $font-editorial;
-      font-size: 20px;
-      font-weight: 700;
-      color: #8A8A8A;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      margin-bottom: 36px;
     }
 
-    .row-separator {
-      color: rgba(255, 255, 255, 0.2);
+    .label-micro {
+      display: inline-block;
+      margin-bottom: 12px;
     }
 
-    .row-title {
-      font-family: $font-heading;
-      font-size: 36px;
+    .editorial-title {
+      font-size: 48px;
       font-weight: 800;
       color: #F5F5F0;
-      letter-spacing: -0.01em;
-      transition: all 0.3s ease;
+      letter-spacing: -0.02em;
 
       @media (max-width: 768px) {
+        font-size: 32px;
+      }
+
+      @media (max-width: 480px) {
         font-size: 26px;
       }
     }
   }
 
-  .row-right {
+  .services-interactive-list {
     display: flex;
-    align-items: center;
-    gap: 32px;
-
-    @media (max-width: 768px) {
-      width: 100%;
-      justify-content: space-between;
-    }
-
-    .row-subtitle {
-      font-family: $font-editorial;
-      font-size: 14px;
-      color: #8A8A8A;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-
-    .row-explore-btn {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      color: #F5F5F0;
-      transition: all 0.3s ease;
-
-      &:hover {
-        background: $accent-growth;
-        color: #090909;
-        border-color: $accent-growth;
-      }
-    }
+    flex-direction: column;
   }
 
-  // Hover & Active States
-  &:hover, &.is-expanded {
-    background: rgba(255, 255, 255, 0.015);
-    padding-left: 20px;
-    padding-right: 20px;
+  .service-interactive-row {
+    position: relative;
+    padding: 36px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    @media (max-width: 768px) {
+      padding: 24px 0;
+    }
+
+    .row-accent-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: $accent-growth;
+      box-shadow: 0 0 12px $accent-growth;
+      transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .row-main-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+    }
+
+    .row-left {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+
+      @media (max-width: 480px) {
+        gap: 12px;
+      }
+
+      .row-number {
+        font-family: $font-editorial;
+        font-size: 20px;
+        font-weight: 700;
+        color: #8A8A8A;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+        @media (max-width: 480px) {
+          font-size: 16px;
+        }
+      }
+
+      .row-separator {
+        color: rgba(255, 255, 255, 0.2);
+      }
+
+      .row-title {
+        font-family: $font-heading;
+        font-size: 36px;
+        font-weight: 800;
+        color: #F5F5F0;
+        letter-spacing: -0.01em;
+        transition: all 0.3s ease;
+
+        @media (max-width: 768px) {
+          font-size: 26px;
+        }
+
+        @media (max-width: 480px) {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .row-right {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+
+      @media (max-width: 768px) {
+        width: 100%;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .row-subtitle {
+        font-family: $font-editorial;
+        font-size: 14px;
+        color: #8A8A8A;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+
+        @media (max-width: 480px) {
+          font-size: 12px;
+        }
+      }
+
+      .row-explore-btn {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        color: #F5F5F0;
+        transition: all 0.3s ease;
+        flex-shrink: 0;
+
+        @media (max-width: 480px) {
+          width: 36px;
+          height: 36px;
+          font-size: 15px;
+        }
+
+        &:hover {
+          background: $accent-growth;
+          color: #090909;
+          border-color: $accent-growth;
+        }
+      }
+    }
+
+    // Hover & Active States
+    &:hover, &.is-expanded {
+      background: rgba(255, 255, 255, 0.015);
+      padding-left: 20px;
+      padding-right: 20px;
+
+      @media (max-width: 480px) {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
 
     .row-accent-line {
       width: 100%;

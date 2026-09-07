@@ -158,6 +158,10 @@
     left: 20px;
   }
 
+  @media (max-width: 480px) {
+    left: 14px;
+  }
+
   .timeline-track-glow {
     position: absolute;
     top: 0;
@@ -254,6 +258,10 @@
 
     @media (max-width: 768px) {
       left: 20px;
+    }
+
+    @media (max-width: 480px) {
+      left: 14px;
     }
 
     .node-halo {
@@ -414,6 +422,12 @@
     margin-right: 0 !important;
     padding: 24px 20px;
     box-sizing: border-box;
+  }
+
+  @media (max-width: 480px) {
+    width: calc(100% - 36px);
+    margin-left: 36px !important;
+    padding: 20px 14px;
   }
 
   &:hover {
