@@ -1,0 +1,231 @@
+@import '../../styles/base/variables';
+
+.search-bar-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-trigger-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: $accent-growth;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+  @media (max-width: 768px) {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
+
+  body.light-mode & {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.1);
+    color: #090909;
+  }
+
+  &:hover {
+    background: rgba(198, 255, 59, 0.15);
+    border-color: $accent-growth;
+    transform: scale(1.08);
+    box-shadow: 0 0 16px rgba(198, 255, 59, 0.3);
+
+    body.light-mode & {
+      background: rgba(0, 0, 0, 0.08);
+      border-color: #090909;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  padding-top: 10vh;
+}
+
+.search-overlay-bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+.search-modal {
+  position: relative;
+  width: 90%;
+  max-width: 650px;
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: $border-radius-lg;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  body.light-mode & {
+    background: #FFFFFF;
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  gap: 16px;
+
+  body.light-mode & {
+    border-bottom-color: rgba(0, 0, 0, 0.08);
+  }
+
+  .search-icon {
+    font-size: 24px;
+    color: $accent-growth;
+    
+    body.light-mode & {
+      color: #16A34A;
+    }
+  }
+
+  input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #F5F5F0;
+    font-size: 18px;
+    font-family: $font-primary;
+    
+    body.light-mode & {
+      color: #090909;
+    }
+
+    &::placeholder {
+      color: #777777;
+      body.light-mode & { color: #999999; }
+    }
+  }
+
+  .clear-btn {
+    background: transparent;
+    border: none;
+    color: #8A8A8A;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    body.light-mode & { color: #666666; }
+    
+    &:hover { color: #F5F5F0; body.light-mode & { color: #090909; } }
+  }
+
+  .close-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #F5F5F0;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    
+    body.light-mode & {
+      background: rgba(0, 0, 0, 0.08);
+      color: #090909;
+    }
+  }
+}
+
+.search-results {
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 12px;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    body.light-mode & { background: rgba(0, 0, 0, 0.1); }
+  }
+}
+
+.search-result-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.04);
+    body.light-mode & { background: rgba(0, 0, 0, 0.03); }
+  }
+
+  .result-type {
+    background: rgba(198, 255, 59, 0.1);
+    color: $accent-growth;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    font-family: $font-editorial;
+
+    body.light-mode & {
+      background: rgba(22, 163, 74, 0.1);
+      color: #16A34A;
+    }
+  }
+
+  .result-content {
+    h4 {
+      margin: 0 0 6px 0;
+      font-size: 15px;
+      color: #F5F5F0;
+      body.light-mode & { color: #090909; }
+    }
+    p {
+      margin: 0;
+      font-size: 13px;
+      color: #8A8A8A;
+      line-height: 1.4;
+      body.light-mode & { color: #666666; }
+    }
+  }
+}
+
+.no-results {
+  padding: 32px;
+  text-align: center;
+  color: #8A8A8A;
+  font-size: 14px;
+  
+  body.light-mode & {
+    color: #666666;
+  }
+}

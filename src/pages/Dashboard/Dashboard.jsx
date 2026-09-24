@@ -98,7 +98,9 @@ const Dashboard = () => {
           </div>
           <div className="dashboard-actions">
             <button className="theme-toggle-btn" onClick={toggleTheme} aria-label="Toggle theme">
-              {isDarkMode ? <FiSun /> : <FiMoon />}
+              <div className="toggle-thumb">
+                {isDarkMode ? <FiSun /> : <FiMoon />}
+              </div>
             </button>
             <Link to="/projects" className="btn btn-primary">View all projects</Link>
           </div>

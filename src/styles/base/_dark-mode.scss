@@ -437,4 +437,202 @@ body.light-mode {
       color: #090909;
     }
   }
+
+  // Service Pages Light Mode
+  .service-hero {
+    h1 { color: #090909; }
+    p { color: #555555; }
+
+    &.bg-gradient-purple {
+      background: linear-gradient(135deg, rgba(108,59,255,0.08) 0%, rgba(255,255,255,0) 100%);
+      border-color: rgba(108,59,255,0.15);
+    }
+
+    &.bg-gradient-blue {
+      background: linear-gradient(135deg, rgba(23,105,255,0.08) 0%, rgba(255,255,255,0) 100%);
+      border-color: rgba(23,105,255,0.15);
+    }
+
+    &.bg-gradient-green {
+      background: linear-gradient(135deg, rgba(50,168,82,0.08) 0%, rgba(255,255,255,0) 100%);
+      border-color: rgba(50,168,82,0.15);
+    }
+
+    .hero-icon-large {
+      img {
+        filter: none;
+      }
+    }
+  }
+
+  .projects-grid {
+    .project-card-wrapper {
+      .project-card {
+        background: #FFFFFF;
+        border-color: rgba(0, 0, 0, 0.1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+
+        &:hover {
+          box-shadow: 0 20px 45px rgba(22, 163, 74, 0.15);
+          border-color: rgba(22, 163, 74, 0.3);
+
+          .category-badge {
+            background: #16A34A;
+            color: #FFFFFF;
+          }
+
+          .project-title-3d {
+            color: #16A34A;
+          }
+        }
+
+        .category-badge {
+          background: rgba(0, 0, 0, 0.05);
+          color: #090909;
+        }
+
+        .project-info {
+          .project-title-3d {
+            color: #090909;
+          }
+
+          .handle {
+            color: #666666;
+          }
+        }
+
+        .project-metrics {
+          border-top-color: rgba(0, 0, 0, 0.08);
+
+          .metric {
+            strong {
+              color: #090909;
+            }
+
+            span {
+              color: #666666;
+            }
+          }
+        }
+
+        .project-action-btn {
+          color: #16A34A;
+
+          &:hover {
+            color: #090909;
+          }
+        }
+      }
+    }
+  }
+
+  // Projects Page Light Mode
+  .projects-page {
+    background: #F8FAFF;
+
+    .filter-btn {
+      background: #FFFFFF;
+      border-color: rgba(0, 0, 0, 0.1);
+      color: #555555;
+
+      &:hover {
+        border-color: #16A34A;
+        color: #16A34A;
+      }
+
+      &.active {
+        background: #16A34A;
+        border-color: #16A34A;
+        color: #FFFFFF;
+      }
+    }
+
+    .search-container {
+      .search-icon {
+        color: #666666;
+      }
+
+      .search-input {
+        background: #FFFFFF;
+        border-color: rgba(0, 0, 0, 0.1);
+        color: #090909;
+
+        &::placeholder {
+          color: #999999;
+        }
+
+        &:focus {
+          border-color: #16A34A;
+        }
+      }
+    }
+  }
+
+  .no-results {
+    background: #FFFFFF;
+    border-color: rgba(0, 0, 0, 0.1);
+
+    h3 { color: #090909; }
+    p { color: #555555; }
+  }
+
+  // About Page Light Mode
+  .about-page {
+    background: #F8FAFF;
+
+    p { color: #555555; }
+  }
+
+  // Section Title Light Mode
+  .section-title {
+    .editorial-section-heading {
+      color: #090909;
+    }
+
+    .editorial-section-sub {
+      color: #555555;
+    }
+  }
+
+  // Team Card Light Mode
+  .team-card {
+    background: #FFFFFF;
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+
+    &:hover {
+      box-shadow: 0 20px 45px rgba(22, 163, 74, 0.15);
+      border-color: rgba(22, 163, 74, 0.3);
+
+      .team-name-3d {
+        color: #16A34A;
+      }
+    }
+
+    .team-name-3d {
+      color: #090909;
+    }
+
+    .role {
+      color: #666666;
+    }
+
+    .team-social {
+      a {
+        color: #666666;
+        background: rgba(0, 0, 0, 0.04);
+
+        &:hover {
+          color: #FFFFFF;
+          background: #16A34A;
+          box-shadow: 0 5px 15px rgba(22, 163, 74, 0.35);
+        }
+      }
+    }
+  }
+
+  // Team Page Light Mode
+  .team-page {
+    background: #F8FAFF;
+  }
 }

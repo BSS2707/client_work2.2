@@ -11,7 +11,7 @@ export const team = [
     id: "yugal-solanki",
     name: "Yugal Solanki",
     role: "Manager / Account Handler",
-    image: "https://cdn.corenexis.com/f/VNAZ1yI46cV.png",
+    image: "https://cdn.corenexis.com/f/K49hsapuaqB.png",
     linkedin: "#",
     instagram: "https://www.instagram.com/yugal__solanki/"
   },
@@ -27,7 +27,7 @@ export const team = [
     id: "yug-solanki",
     name: "Yug Solanki",
     role: "Content Writer / Reel Researcher",
-    image: "https://cdn.corenexis.com/f/K49hsapuaqB.png",
+    image: "https://cdn.corenexis.com/f/VNAZ1yI46cV.png",
     linkedin: "#",
     instagram: "https://www.instagram.com/yug.solanki2007/"
   },

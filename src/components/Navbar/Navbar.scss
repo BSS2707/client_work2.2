@@ -323,42 +323,58 @@
     }
 
     .theme-toggle-btn {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      width: 56px;
+      height: 28px;
+      border-radius: 100px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      position: relative;
+      cursor: pointer;
       display: flex;
       align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      color: $accent-growth;
-      cursor: pointer;
-      flex-shrink: 0;
+      padding: 0 4px;
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      flex-shrink: 0;
 
       @media (max-width: 768px) {
-        width: 38px;
-        height: 38px;
-        font-size: 16px;
+        display: none; // hide on mobile, as it is in the drawer
       }
 
       body.light-mode & {
-        background: rgba(0, 0, 0, 0.05);
-        border-color: rgba(0, 0, 0, 0.1);
-        color: #090909;
+        background: rgba(0, 0, 0, 0.08);
+        border-color: rgba(0, 0, 0, 0.15);
       }
 
       &:hover {
         background: rgba(198, 255, 59, 0.15);
         border-color: $accent-growth;
-        transform: scale(1.08);
-        box-shadow: 0 0 16px rgba(198, 255, 59, 0.3);
+        
+        body.light-mode & {
+          background: rgba(22, 163, 74, 0.15);
+          border-color: #16A34A;
+        }
+      }
+
+      .toggle-thumb {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: $accent-growth;
+        color: #090909;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        position: absolute;
+        left: 4px;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s, box-shadow 0.3s;
+        box-shadow: 0 0 10px rgba(198, 255, 59, 0.4);
 
         body.light-mode & {
-          background: rgba(0, 0, 0, 0.08);
-          border-color: #090909;
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          background: #16A34A;
+          color: #FFFFFF;
+          transform: translateX(28px);
+          box-shadow: 0 0 8px rgba(22, 163, 74, 0.4);
         }
       }
     }
@@ -522,21 +538,42 @@
       gap: 12px;
 
       .theme-toggle-btn.in-drawer {
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
+        width: 50px;
+        height: 26px;
+        border-radius: 100px;
         background: rgba(255, 255, 255, 0.05);
         border: 1px solid rgba(255, 255, 255, 0.1);
         display: flex;
         align-items: center;
-        justify-content: center;
-        font-size: 16px;
-        color: $accent-growth;
+        padding: 0 4px;
+        position: relative;
 
         body.light-mode & {
           background: rgba(0, 0, 0, 0.05);
           border-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .toggle-thumb {
+          width: 18px;
+          height: 18px;
+          border-radius: 50%;
+          background: $accent-growth;
           color: #090909;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 10px;
+          position: absolute;
+          left: 4px;
+          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s;
+          box-shadow: 0 0 10px rgba(198, 255, 59, 0.4);
+
+          body.light-mode & {
+            background: #16A34A;
+            color: #FFFFFF;
+            transform: translateX(24px);
+            box-shadow: 0 0 8px rgba(22, 163, 74, 0.4);
+          }
         }
       }
 

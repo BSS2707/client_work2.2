@@ -18,6 +18,7 @@ import About from './pages/About/About';
 import Team from './pages/Team/Team';
 import Contact from './pages/Contact/Contact';
 import NotFound from './pages/NotFound/NotFound';
+import FAQChatbot from './components/FAQChatbot/FAQChatbot';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -48,6 +49,7 @@ function App() {
             </Routes>
           </main>
           <Footer />
+          <FAQChatbot />
         </div>
       </Router>
     </>

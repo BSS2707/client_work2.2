@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { FiMenu, FiX, FiArrowUpRight, FiSun, FiMoon, FiChevronDown, FiInstagram, FiMonitor, FiPenTool } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';
+import SearchBar from '../SearchBar/SearchBar';
 import './Navbar.scss';
 
 const serviceItems = [
@@ -180,35 +181,38 @@ const Navbar = () => {
 
           {/* Right: Theme Toggle & Action Button */}
           <div className="nav-right-action">
+            <SearchBar />
             <button
               className="theme-toggle-btn"
               onClick={toggleTheme}
               aria-label="Toggle light / dark mode"
               title={isLightMode ? "Switch to Dark Mode" : "Switch to Light Mode"}
             >
-              <AnimatePresence mode="wait">
-                {isLightMode ? (
-                  <motion.div
-                    key="moon"
-                    initial={{ rotate: -90, opacity: 0, scale: 0.6 }}
-                    animate={{ rotate: 0, opacity: 1, scale: 1 }}
-                    exit={{ rotate: 90, opacity: 0, scale: 0.6 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <FiMoon />
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key="sun"
-                    initial={{ rotate: 90, opacity: 0, scale: 0.6 }}
-                    animate={{ rotate: 0, opacity: 1, scale: 1 }}
-                    exit={{ rotate: -90, opacity: 0, scale: 0.6 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <FiSun />
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              <div className="toggle-thumb">
+                <AnimatePresence mode="wait">
+                  {isLightMode ? (
+                    <motion.div
+                      key="moon"
+                      initial={{ rotate: -90, opacity: 0, scale: 0.6 }}
+                      animate={{ rotate: 0, opacity: 1, scale: 1 }}
+                      exit={{ rotate: 90, opacity: 0, scale: 0.6 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <FiMoon />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="sun"
+                      initial={{ rotate: 90, opacity: 0, scale: 0.6 }}
+                      animate={{ rotate: 0, opacity: 1, scale: 1 }}
+                      exit={{ rotate: -90, opacity: 0, scale: 0.6 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <FiSun />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             </button>
 
             <Link to="/contact" className="nav-talk-btn">
@@ -261,7 +265,9 @@ const Navbar = () => {
                     onClick={toggleTheme}
                     aria-label="Toggle Mode"
                   >
-                    {isLightMode ? <FiMoon /> : <FiSun />}
+                    <div className="toggle-thumb">
+                      {isLightMode ? <FiMoon /> : <FiSun />}
+                    </div>
                   </button>
 
                   <button
