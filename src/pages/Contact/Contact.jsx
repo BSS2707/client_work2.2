@@ -170,25 +170,29 @@ const Contact = () => {
                 <div className="form-row">
                   <div className="form-group">
                     <label>Service *</label>
-                    <select name="service" value={formData.service} onChange={handleChange} className="form-control">
-                      <option value="">Select a service</option>
-                      <option value="Instagram Management">Instagram Management</option>
-                      <option value="Web Development">Web Development</option>
-                      <option value="Graphic Designing">Graphic Designing</option>
-                      <option value="Branding">Branding</option>
-                      <option value="Other">Other</option>
-                    </select>
+                    <div className="select-field">
+                      <select name="service" value={formData.service} onChange={handleChange} className="form-control">
+                        <option value="">Select a service</option>
+                        <option value="Instagram Management">Instagram Management</option>
+                        <option value="Web Development">Web Development</option>
+                        <option value="Graphic Designing">Graphic Designing</option>
+                        <option value="Branding">Branding</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
                     {errors.service && <span className="error-message">{errors.service}</span>}
                   </div>
                   <div className="form-group">
                     <label>Budget</label>
-                    <select name="budget" value={formData.budget} onChange={handleChange} className="form-control">
-                      <option value="">Select a budget</option>
-                      <option value="₹10K – ₹25K">₹10K – ₹25K</option>
-                      <option value="₹25K – ₹50K">₹25K – ₹50K</option>
-                      <option value="₹50K – ₹1L">₹50K – ₹1L</option>
-                      <option value="₹1L+">₹1L+</option>
-                    </select>
+                    <div className="select-field">
+                      <select name="budget" value={formData.budget} onChange={handleChange} className="form-control">
+                        <option value="">Select a budget</option>
+                        <option value="₹10K – ₹25K">₹10K – ₹25K</option>
+                        <option value="₹25K – ₹50K">₹25K – ₹50K</option>
+                        <option value="₹50K – ₹1L">₹50K – ₹1L</option>
+                        <option value="₹1L+">₹1L+</option>
+                      </select>
+                    </div>
                   </div>
                 </div>
                 

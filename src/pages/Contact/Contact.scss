@@ -22,6 +22,27 @@
 .text-secondary { color: #8A8A8A; }
 .w-full { width: 100%; }
 
+.select-field {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid $accent-growth;
+    border-bottom: 2px solid $accent-growth;
+    transform: translateY(-60%) rotate(45deg);
+    pointer-events: none;
+
+    body.light-mode & {
+      border-color: #16A34A;
+    }
+  }
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1.4fr;
