@@ -76,7 +76,7 @@ const Hero3DVisual = () => {
           <div className="core-glass-disc">
             <div className="logo-glow-layer" />
             <img
-              src="https://cdn.corenexis.com/f/pzO06agieXb.png"
+              src="/logo.png"
               alt="GrowVora Logo"
               className="core-logo-image"
             />

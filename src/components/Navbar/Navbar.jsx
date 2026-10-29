@@ -99,7 +99,7 @@ const Navbar = () => {
           <Link to="/" className="brand-logo">
             <div className="logo-icon-wrap">
               <img
-                src="https://cdn.corenexis.com/f/pzO06agieXb.png"
+                src="/logo.png"
                 alt="GrowVora Logo"
                 className="brand-logo-img"
               />

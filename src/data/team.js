@@ -3,7 +3,7 @@ export const team = [
     id: "harshil-pawar",
     name: "Harshil Pawar",
     role: "Founder",
-    image: "https://cdn.corenexis.com/f/JjuoYVfcMff.png",
+    image: "/imgs/harshil.png",
     linkedin: "#",
     instagram: "https://www.instagram.com/pawar_harshil19/"
   },
@@ -11,7 +11,7 @@ export const team = [
     id: "yugal-solanki",
     name: "Yugal Solanki",
     role: "Manager / Account Handler",
-    image: "https://cdn.corenexis.com/f/K49hsapuaqB.png",
+    image: "/imgs/yugal.png",
     linkedin: "#",
     instagram: "https://www.instagram.com/yugal__solanki/"
   },
@@ -19,7 +19,7 @@ export const team = [
     id: "dharmesh-bhatt",
     name: "Dharmesh Bhatt",
     role: "Graphic Designer",
-    image: "https://cdn.corenexis.com/f/4oZ1yb1mJY3.png",
+    image: "/imgs/db.png",
     linkedin: "#",
     instagram: "https://www.instagram.com/dharmeshbhatt18/"
   },
@@ -27,7 +27,7 @@ export const team = [
     id: "yug-solanki",
     name: "Yug Solanki",
     role: "Content Writer / Reel Researcher",
-    image: "https://cdn.corenexis.com/f/VNAZ1yI46cV.png",
+    image: "/imgs/yug.png",
     linkedin: "#",
     instagram: "https://www.instagram.com/yug.solanki2007/"
   },

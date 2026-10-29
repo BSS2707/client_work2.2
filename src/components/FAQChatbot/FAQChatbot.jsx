@@ -96,7 +96,7 @@ const FAQChatbot = () => {
             <div className="chatbot-header">
               <div className="header-left">
                 <div className="bot-avatar">
-                  <img src="https://cdn.corenexis.com/f/pzO06agieXb.png" alt="GrowVora Bot" />
+                  <img src="/logo.png" alt="GrowVora Bot" />
                 </div>
                 <div className="header-text">
                   <h4>GrowVora Assistant</h4>
