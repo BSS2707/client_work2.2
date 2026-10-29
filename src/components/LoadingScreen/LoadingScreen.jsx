@@ -118,7 +118,7 @@ const LoadingScreen = ({ onLoadingComplete }) => {
                 animate={{ scale: 1, opacity: 1, letterSpacing: '0.05em' }}
                 transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
               >
-                <h2 className="reveal-text">LET'S GROW<span className="accent-dot">.</span></h2>
+                <h2 className="reveal-text">GROWVORA</h2>
               </motion.div>
             )}
           </div>
